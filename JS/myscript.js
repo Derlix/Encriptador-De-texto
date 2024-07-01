@@ -68,8 +68,9 @@ function desEncriptar() {
             mensajeDesEncriptado = mensajeDesEncriptado.replace(new RegExp(vocalesEncriptadas[4], 'g'), vocales[4]);
             reemplazarImagenConTexto('');
             console.log(mensajeDesEncriptado);
-            reemplazarImagenConTexto(mensajeDesEncriptado);
             asignarTexto('desencriptarInput', '');
+        
+            reemplazarImagenConTexto(mensajeDesEncriptado);
         }
         asignarTexto('indicaciones', 'Palabra o mensaje Desencriptado');
         asignarTexto('ningun', '');
@@ -99,6 +100,7 @@ function reemplazarImagenConTexto(mensaje) {
     contenedor.innerHTML = '';
 
     const nuevoTexto = document.createElement('p');
+    nuevoTexto.setAttribute('id','desencriptarInput');
     nuevoTexto.textContent = mensaje;
     nuevoTexto.style.wordBreak = 'break-word'; 
     contenedor.appendChild(nuevoTexto);
